@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Vending Machine Portfolio</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600&family=VT323&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="room">
+  <div id="stage">
+    <img class="base" src="assets/machine-empty.webp" alt="A rusted vending machine overgrown with vines" width="896" height="1200">
+    <img class="glow neon" src="assets/glow-neon.webp" alt="" style="left:195px;top:20px;width:565px;height:245px">
+    <img class="glow crtg" src="assets/glow-crt.webp" alt="" style="left:365px;top:605px;width:325px;height:240px">
+    <div id="window"></div>
+    <div id="sheen"></div>
+    <div id="crt">
+      <div id="rows"></div>
+      <div id="foot" aria-live="polite"></div>
+      <i class="scan"></i>
+    </div>
+    <div id="pad"></div>
+    <div id="tray"><i class="flap"></i></div>
+  </div>
+  <canvas id="motes" aria-hidden="true"></canvas>
+</main>
+<div id="bar">
+  <p id="hint">Pick something off the shelf, or press 1 to 4.</p>
+  <button id="zoom" type="button">Step closer</button>
+  <button id="motion" type="button">Motion on</button>
+  <button id="sound" type="button" aria-pressed="true">Sound on</button>
+</div>
+<img id="fly" alt="" hidden>
+
+<div id="veil" hidden>
+  <section class="panel" id="p-journal" role="dialog" aria-modal="true" aria-label="Journal, artwork" hidden>
+    <div class="book"><div class="pg left"></div><div class="pg right"></div><div class="leaf" hidden></div><i class="ribbon"></i></div>
+    <div class="ctl"><button id="prev" type="button">Previous</button><span id="count"></span><button id="next" type="button">Next</button></div>
+  </section>
+  <section class="panel" id="p-mp3" role="dialog" aria-modal="true" aria-label="MP3 player" hidden>
+    <div class="player">
+      <div class="screen"><div class="top"><span id="m-state"></span><span id="m-vol"></span></div><div id="m-body"></div></div>
+      <div class="wheel" id="wheel">
+        <button class="w-menu" type="button" data-m="menu">MENU</button>
+        <button class="w-prev" type="button" data-m="prev" aria-label="Previous song"><i></i><i></i></button>
+        <button class="w-next" type="button" data-m="next" aria-label="Next song"><i></i><i></i></button>
+        <button class="w-play" type="button" data-m="play" aria-label="Play or pause"><i></i><b></b></button>
+        <button class="w-mid" type="button" data-m="ok" aria-label="Select"></button>
+      </div>
+    </div>
+    <p class="tip">Turn the wheel to scroll songs or change the volume. Music keeps playing when you put it back.</p>
+  </section>
+  <section class="panel" id="p-id" role="dialog" aria-modal="true" aria-label="ID card" hidden>
+    <div class="hang"><i class="strap"></i><i class="clip"></i><div class="card" id="card"></div></div>
+    <div class="ctl"><button id="turn" type="button">Turn over</button></div>
+  </section>
+  <section class="panel" id="p-keys" role="dialog" aria-modal="true" aria-label="Keys, links" hidden>
+    <div class="ring"><div class="hook"><img src="assets/keys.png" alt="Three keys on a ring"></div><ul id="tags"></ul></div>
+  </section>
+  <p id="samplenote" hidden>Sample content. Edit content.js to make it yours.</p>
+  <button id="back" type="button">Put it back</button>
+</div>
+<div id="zoomed" hidden role="dialog" aria-label="Artwork, large"></div>
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
